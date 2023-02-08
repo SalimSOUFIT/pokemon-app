@@ -1,0 +1,31 @@
+import { Injectable } from '@angular/core';
+import { Pokemon } from './pokemon';
+import { POKEMONS } from './moc-pokemon-list';
+
+@Injectable()
+
+export class PokemonService {
+
+  getPokemonList() : Pokemon[]{
+    return POKEMONS;
+  }
+
+  getPokemonById(pokemonId: number) : Pokemon|undefined {
+    return POKEMONS.find(pokemon => pokemon.id == pokemonId);
+  }
+  
+  getPokemonTypeListe() : string[]{
+    return [
+      'Plante',
+      'Feu',
+      'Eau',
+      'Insecte',
+      'Normal',
+      'Electrik',
+      'Poison',
+      'Fée',
+      'Vol',
+      'Combat',
+      'Psy']; 
+  }
+}
